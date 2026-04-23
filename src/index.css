@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@theme {
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #980054;
+  --color-on-primary: #ffffff;
+  
+  --color-surface: #ffffff;
+  --color-on-surface: #141b2b;
+  --color-surface-container: #e9edff;
+  --color-surface-container-low: #f1f3ff;
+  
+  --color-background: #f9f9ff;
+  --color-on-background: #141b2b;
+  
+  --color-secondary: #555f6d;
+  --color-outline: #8d6f78;
+  --color-outline-variant: #e0bec7;
+  
+  --color-primary-fixed: #ffd9e3;
+  --color-on-primary-fixed-variant: #8d004e;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-background antialiased;
+  }
+}
+
+.grid-time-slot:hover {
+  @apply bg-primary-fixed/30;
+}
+
+.grid-time-slot.selected {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Patrón rayado para referencia histórica de imagen 3 */
+.historic-reference {
+  background-image: repeating-linear-gradient(45deg, #f1f3ff, #f1f3ff 10px, #e9edff 10px, #e9edff 20px);
+  border: 1px dashed #c5c6c8;
+}
+
+.historic-reference.selected {
+  background-image: none;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
